@@ -12,7 +12,7 @@ class Button extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-      child: Align(alignment: Alignment.centerRight ,child: ButtonS(height: 40,onTap: () {ButtonPopUp().popUp(context, homeController, true);}, width: 150, text: 'Adicionar Periodo',)),
+      child: Align(alignment: Alignment.centerRight ,child: ButtonS(font: FontWeight.w600 ,size: 12 ,height: 30 ,onTap: () {ButtonPopUp().popUp(context, homeController, true);}, width: 120, text: 'Adicionar Periodo')),
     );
   }
 

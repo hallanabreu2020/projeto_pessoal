@@ -39,165 +39,170 @@ class _BodyPopUpAddState extends State<BodyPopUpAdd> {
       animation: widget.homeController,
       builder: (context,_) {
         return SingleChildScrollView(
-          child: Padding(
-              padding:  const EdgeInsets.all(20.0),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const SizedBox(width: 30),
-                      const Manrope(text: "Novo Período", size: 16),
-                      InkWell(
-                        onTap: (){Navigator.pop(context);},
-                        child: const Icon(Icons.close))
-                    ],
-                  ),
-                  const SizedBox(height: 20),
-                  InputPersonalizedPopUp(labelText:  "Nomeie seu periodo",controller: widget.homeController.nameController, obscureText: false, validator: null, obscure: false, width: size.width - 130),
-                  const SizedBox(height: 20),
-                  Container(
-                    height: 200,
-                    width: size.width - 130,
-                    color: const Color(0XFFF5F6FA),
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
+          child: SizedBox(
+            child: Padding(
+                padding:  const EdgeInsets.all(10.0),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const SizedBox(width: 30),
+                        const Manrope(text: "Novo Período", size: 16, font: FontWeight.w700),
+                        InkWell(
+                          onTap: (){Navigator.pop(context);},
+                          child: const Icon(Icons.close, color: Color.fromARGB(255, 224, 224, 224), size: 30))
+                      ],
+                    ),
+                    const SizedBox(height: 20),
+                    InputPersonalizedPopUp(labelText:  "Nomeie seu periodo",controller: widget.homeController.nameController, obscureText: false, validator: null, obscure: false, width: size.width - 130, height: 50),
+                    const SizedBox(height: 20),
+                    Container(
+                      height: 200,
+                      width: size.width - 130,
+                      color: const Color(0XFFF5F6FA),
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Manrope(text: "Começa", size: 16, font: FontWeight.w500),
+                                InkWell(
+                                  onTap: ()=> PopUpCalendar().popUp(context, homeController: widget.homeController),
+                                  child: Container(
+                                    height: 40,
+                                    width: 140,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(10),
+                                      border: Border.all(
+                                        color: const Color.fromARGB(255, 204, 204, 204),
+                                        width: 1.0,
+                                        style: BorderStyle.solid,
+                                        strokeAlign: BorderSide.strokeAlignInside,
+                                      )
+                                    ),
+                                    child: Center(child: Manrope(text: Mask().convertData(widget.homeController.init) , size: 14)),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const Divider(color: Colors.grey,),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Manrope(text: "Termina", size: 16, font: FontWeight.w500),
+                                InkWell(
+                                  onTap: ()=> PopUpCalendar().popUp(context, init: false, homeController: widget.homeController),
+                                  child: Container(
+                                    height: 40,
+                                    width: 140,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(10),
+                                      border: Border.all(
+                                        color: const Color.fromARGB(255, 204, 204, 204),
+                                        width: 1.0,
+                                        style: BorderStyle.solid,
+                                        strokeAlign: BorderSide.strokeAlignInside,
+                                      )
+                                    ),
+                                    child: Center(child: Manrope(text: Mask().convertData(widget.homeController.end) , size: 14)),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const Divider(color: Colors.grey,),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Manrope(text: "Categoria", size: 16, font: FontWeight.w500),
+                                Container(
+                                  height: 40,
+                                  width: 140,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(
+                                      color: const Color.fromARGB(255, 204, 204, 204),
+                                      width: 1.0,
+                                      style: BorderStyle.solid,
+                                      strokeAlign: BorderSide.strokeAlignInside,
+                                    )
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        DropdownButtonFormText(onTap: (String? v) {
+                                          widget.homeController.addSelctCategory(v!);
+                                        }, value: widget.homeController.selctCategory, lists: widget.homeController.category, color: const Color.fromARGB(255, 7, 7, 7),size: 14, font: FontWeight.w400,),
+                                        const Icon(Icons.keyboard_arrow_down_sharp, color: Colors.grey)
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(25, 10, 25, 10),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              const Manrope(text: "Começa", size: 16),
-                              InkWell(
-                                onTap: ()=> PopUpCalendar().popUp(context, homeController: widget.homeController),
-                                child: Container(
-                                  height: 40,
-                                  width: 140,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(10),
-                                    border: Border.all(
-                                      color: const Color.fromARGB(255, 204, 204, 204),
-                                      width: 1.0,
-                                      style: BorderStyle.solid,
-                                      strokeAlign: BorderSide.strokeAlignInside,
-                                    )
-                                  ),
-                                  child: Center(child: Manrope(text: Mask().convertData(widget.homeController.init) , size: 14)),
-                                ),
-                              ),
+                              const Manrope(text: "Meta 1", size: 16, font: FontWeight.w500),
+                              InputPersonalized(inputFormatters: [LengthLimitingTextInputFormatter(5)], keyboardType: TextInputType.number ,hintText:  "Un",controller: widget.homeController.meta1Controller, obscureText: false, validator: null, obscure: false, width: 100, height: 40),
                             ],
                           ),
-                          const Divider(color: Colors.grey,),
+                          const SizedBox(height: 20),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              const Manrope(text: "Termina", size: 16),
-                              InkWell(
-                                onTap: ()=> PopUpCalendar().popUp(context, init: false, homeController: widget.homeController),
-                                child: Container(
-                                  height: 40,
-                                  width: 140,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(10),
-                                    border: Border.all(
-                                      color: const Color.fromARGB(255, 204, 204, 204),
-                                      width: 1.0,
-                                      style: BorderStyle.solid,
-                                      strokeAlign: BorderSide.strokeAlignInside,
-                                    )
-                                  ),
-                                  child: Center(child: Manrope(text: Mask().convertData(widget.homeController.end) , size: 14)),
-                                ),
-                              ),
+                              const Manrope(text: "Meta 2", size: 16, font: FontWeight.w500),
+                              InputPersonalized(inputFormatters: [LengthLimitingTextInputFormatter(5)],keyboardType: TextInputType.number ,hintText:  "Un",controller: widget.homeController.meta2Controller, obscureText: false, validator: null, obscure: false, width: 100, height: 40),
                             ],
                           ),
-                          const Divider(color: Colors.grey,),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Manrope(text: "Categoria", size: 16),
-                              Container(
-                                height: 40,
-                                width: 140,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(10),
-                                  border: Border.all(
-                                    color: const Color.fromARGB(255, 204, 204, 204),
-                                    width: 1.0,
-                                    style: BorderStyle.solid,
-                                    strokeAlign: BorderSide.strokeAlignInside,
-                                  )
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 5),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      DropdownButtonFormText(onTap: (String? v) {
-                                        widget.homeController.addSelctCategory(v!);
-                                      }, value: widget.homeController.selctCategory, lists: widget.homeController.category, color: const Color.fromARGB(255, 7, 7, 7),size: 14, font: FontWeight.w400,),
-                                      const Icon(Icons.keyboard_arrow_down_sharp, color: Colors.grey)
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+                          const SizedBox(height: 20),
+                          ButtonS(onTap: (){
+                            if(widget.homeController.nameController.text == ""){ MessagesUi().snackUi(context, "Adicione um nome");return; }
+                            if(widget.homeController.init == "Escolha uma data"){ MessagesUi().snackUi(context, "Adicione uma data inicial");return; }
+                            if(widget.homeController.end == "Escolha uma data"){ MessagesUi().snackUi(context, "Adicione uma data final");return; }
+                            if(widget.homeController.meta1Controller.text == ""){ MessagesUi().snackUi(context, "Adicione uma Meta1");return; }
+                            if(widget.homeController.meta2Controller.text == ""){ MessagesUi().snackUi(context, "Adicione uma Meta2");return; }
+                            if(widget.iten == null){
+                              widget.homeController.conclude();
+                              Navigator.pop(context);
+                              MessagesUi().snackUi(context, "Dados adicionado com sucesso");
+                            }else{
+                              widget.homeController.inclement(widget.iten!);
+                              Navigator.pop(context);
+                              MessagesUi().snackUi(context, "Dados alterado com sucesso");
+                            }
+                          }, width: 110, text: 'Concluir', height: 40, font: FontWeight.w600, size: 16)
                         ],
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(25.0),
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Manrope(text: "Meta 1", size: 16),
-                            InputPersonalized(inputFormatters: [LengthLimitingTextInputFormatter(3)], keyboardType: TextInputType.number ,hintText:  "Un",controller: widget.homeController.meta1Controller, obscureText: false, validator: null, obscure: false, width: 80, height: 40),
-                          ],
-                        ),
-                        const SizedBox(height: 20),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Manrope(text: "Meta 2", size: 16),
-                            InputPersonalized(inputFormatters: [LengthLimitingTextInputFormatter(3)],keyboardType: TextInputType.number ,hintText:  "Un",controller: widget.homeController.meta2Controller, obscureText: false, validator: null, obscure: false, width: 80, height: 40),
-                          ],
-                        ),
-                        const SizedBox(height: 20),
-                        ButtonS(onTap: (){
-                          
-                          if(widget.iten == null){
-                            widget.homeController.conclude();
-                            Navigator.pop(context);
-                            MessagesUi().snackUi(context, "Dados adicionado com sucesso");
-                          }else{
-                            widget.homeController.inclement(widget.iten!);
-                            Navigator.pop(context);
-                            MessagesUi().snackUi(context, "Dados alterado com sucesso");
-                          }
-                        }, width: 120, text: 'Concluir', height: 40)
-                      ],
-                    ),
-                  ),
-        
-        
-        
-        
-        
-        
-        
-        
-        
-                ],
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  ],
+                ),
               ),
-            ),
+          ),
         );
       }
     );

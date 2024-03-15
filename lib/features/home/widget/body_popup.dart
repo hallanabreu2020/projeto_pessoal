@@ -14,7 +14,7 @@ class BodyPopUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 600,
+      height: 530,
       width: 500,
       decoration: BoxDecoration(
         color: Colors.white,

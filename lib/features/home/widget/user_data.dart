@@ -11,15 +11,20 @@ class UserDate extends StatelessWidget {
     return Column(
       children: [
         const SizedBox(height: 20),
-        const Align(alignment: Alignment.centerLeft ,child: Manrope(text: "Apelido", size: 12, font: FontWeight.w600)),
-        const SizedBox(height: 5),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            InputPersonalized(controller: TextEditingController(), obscureText: false, validator: null, obscure: false, width: size.width - 200),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Align(alignment: Alignment.centerLeft ,child: Manrope(text: "Apelido", size: 14, font: FontWeight.w600)),
+                const SizedBox(height: 5),
+                InputPersonalized(controller: TextEditingController(), obscureText: false, validator: null, obscure: false, width: size.width - 200, height: 40),
+              ],
+            ),
             Container(
               height: 60,
-              width: 140,
+              width: 150,
               decoration: BoxDecoration(
                 color: const Color.fromARGB(255, 231, 231, 231),
                 borderRadius: BorderRadius.circular(10)
@@ -33,7 +38,7 @@ class UserDate extends StatelessWidget {
                       backgroundImage: AssetImage("assets/logo.png"),
                     ),
                     SizedBox(width: 10),
-                    Manrope(text: "Editar foto", size: 12, font: FontWeight.w600),
+                    Manrope(text: "Editar foto", size: 14, font: FontWeight.w500),
                   ],
                 ),
               ),

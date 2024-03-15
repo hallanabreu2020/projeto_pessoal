@@ -19,7 +19,7 @@ class Manrope extends StatelessWidget {
       textAlign: aling,
       overflow: TextOverflow.ellipsis,
       style: TextStyle(
-        fontFamily: "Manrope",
+        fontFamily: "inter",
         fontWeight: font,
         fontSize: size,
         color: color,

@@ -17,39 +17,39 @@ class BodyPopUpEdit extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return SingleChildScrollView(
       child: Padding(
-          padding:  const EdgeInsets.all(20.0),
+          padding:  const EdgeInsets.all(10.0),
           child: Column(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const SizedBox(width: 30),
-                 const  Manrope(text: "Editar Período", size: 16),
+                 const  Manrope(text: "Editar Período", size: 16, font: FontWeight.w700),
                   InkWell(
                     onTap: (){Navigator.pop(context);},
-                    child: const Icon(Icons.close))
+                    child: const Icon(Icons.close, size: 30, color: Color.fromARGB(255, 216, 216, 216)))
                 ],
               ),
               const SizedBox(height: 20),
               Container(
-                height: 60,
+                height: 55,
                 width: size.width - 130,
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 243, 248, 255),
+                  color: const Color(0xffF5F6FA),
                   borderRadius: BorderRadius.circular(10),
-                  border: Border.all(
-                    color: const Color.fromARGB(255, 211, 211, 211),
-                    width: 1.0,
-                    style: BorderStyle.solid,
-                    strokeAlign: BorderSide.strokeAlignInside,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Row(
+                    children: [
+                      Center(child: Manrope(text: iten!.name,font: FontWeight.w500, size: 16)),
+                    ],
                   ),
                 ),
-                child: Center(child: Manrope(text: iten!.name)),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               Container(
                 height: 200,
-                width: size.width - 130,
                 color: Colors.white,
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
@@ -59,7 +59,7 @@ class BodyPopUpEdit extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Manrope(text: "Começa", size: 16),
+                          const Manrope(text: "Começa", size: 16, font: FontWeight.w500),
                           SizedBox(
                             height: 40,
                             child: Center(child: Manrope(text: Mask().convertData(iten!.init), size: 14)),
@@ -70,7 +70,7 @@ class BodyPopUpEdit extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Manrope(text: "Termina", size: 16),
+                          const Manrope(text: "Termina", size: 16, font: FontWeight.w500),
                           SizedBox(
                             height: 40,
                             child: Center(child: Manrope(text: Mask().convertData(iten!.end), size: 14)),
@@ -81,7 +81,7 @@ class BodyPopUpEdit extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Manrope(text: "Categoria", size: 16),
+                          const Manrope(text: "Categoria", size: 16, font: FontWeight.w500),
                           SizedBox(
                             height: 40,
                             child: Center(child: Manrope(text: iten!.selctCategory, size: 14)),
@@ -93,13 +93,13 @@ class BodyPopUpEdit extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(25.0),
+                padding: const EdgeInsets.fromLTRB(25, 10, 25, 10),
                 child: Column(
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Manrope(text: "Meta 1", size: 16),
+                        const Manrope(text: "Meta 1", size: 16, font: FontWeight.w500),
                         SizedBox(
                             height: 40,
                             child: Center(child: Manrope(text: iten!.meta1.toString(), size: 14)),
@@ -110,7 +110,7 @@ class BodyPopUpEdit extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Manrope(text: "Meta 2", size: 16),
+                        const Manrope(text: "Meta 2", size: 16, font: FontWeight.w500),
                         SizedBox(
                             height: 40,
                             child:  Center(child: Manrope(text: iten!.meta2.toString(), size: 14)),
@@ -124,11 +124,11 @@ class BodyPopUpEdit extends StatelessWidget {
                         ButtonS(onTap: () {
                           homeController.deleteItem(iten!);
                           Navigator.pop(context);
-                        }, width: 100, text: 'Excluir', height: 40, color: Colors.red),
+                        }, width: 110, text: 'Excluir', height: 40, font: FontWeight.w600, size: 16, color: Colors.red),
                         ButtonS(onTap: () {
                           Navigator.pop(context);
                           ButtonPopUp().popUp(context, homeController, true, iten: iten);
-                        }, width: 100, text: 'Editar', height: 40),
+                        }, width: 110, text: 'Editar', height: 40, font: FontWeight.w600, size: 16) 
                       ],
                     )
                   ],

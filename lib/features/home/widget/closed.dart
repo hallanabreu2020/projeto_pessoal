@@ -18,14 +18,15 @@ class Closed extends StatelessWidget {
         child: Row(
           children: [
             const CircleAvatar(
-              radius: 25,
+              radius: 35,
               backgroundImage: AssetImage("assets/logo.png"),
             ),
-            const SizedBox(width: 10),
+            const SizedBox(width: 13),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Manrope(text: "Maria", size: 18, font: FontWeight.w600),
+                const Manrope(text: "João", size: 22, font: FontWeight.w500, color: Color(0xff0F268A)),
+                const SizedBox(width: 5),
                 InkWell(
                   onTap: (){
                     NavigatorScreen().push(context, const LoginViewModule());

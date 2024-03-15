@@ -26,7 +26,7 @@ class HomeView extends StatelessWidget {
                 const UserDate(),
                 const Padding(
                   padding: EdgeInsets.symmetric(vertical: 20),
-                  child: Divider(color: Color.fromARGB(255, 106, 106, 106),),
+                  child: Divider(color: Color.fromARGB(255, 0, 0, 0), height: 5),
                 ),
                 Requests(homeController: homeController),
                 Button(homeController: homeController),

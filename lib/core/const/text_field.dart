@@ -45,9 +45,9 @@ class InputPersonalized extends StatelessWidget {
       height: height,
       width: width,
       decoration: BoxDecoration(
-        color: const Color.fromARGB(108, 255, 255, 255),
-        border: Border.all(color: const Color.fromARGB(197, 208, 208, 208), width: 2),
-        borderRadius: const BorderRadius.all(Radius.circular(4)),
+        color: Colors.white,
+        border: Border.all(color: const Color.fromARGB(197, 235, 235, 235), width: 2),
+        borderRadius:  BorderRadius.circular(10),
       ),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
@@ -68,7 +68,7 @@ class InputPersonalized extends StatelessWidget {
                   obscureText: obscureText,
                   autovalidateMode: autovalidateMode,
                   controller: controller,
-                  style: const TextStyle(fontFamily: 'Nunito', color: Color.fromARGB(255, 113, 113, 113), fontSize: 15),
+                  style: const TextStyle(fontFamily: 'inter', color: Color.fromARGB(255, 113, 113, 113), fontSize: 15),
                   inputFormatters: inputFormatters,
                   onEditingComplete: onEditingComplete,
                   decoration: InputDecoration(
@@ -79,7 +79,7 @@ class InputPersonalized extends StatelessWidget {
                     disabledBorder: InputBorder.none,
                     hintText: hintText,
                     labelText: labelText,
-                    labelStyle: const TextStyle(fontFamily: 'Nunito', color: Color.fromARGB(255, 132, 132, 132), fontSize: 15),
+                    labelStyle: const TextStyle(fontFamily: 'inter', color: Color.fromARGB(255, 132, 132, 132), fontSize: 15),
                   ),
                   validator: validator,
                   onChanged: onChanged,
@@ -139,8 +139,8 @@ class InputPersonalizedPopUp extends StatelessWidget {
       height: height,
       width: width,
       decoration: BoxDecoration(
-        color: const Color.fromARGB(108, 213, 213, 213),
-        border: Border.all(color: const Color.fromARGB(197, 225, 225, 225), width: 2),
+        color: const Color(0xffF5F6FA),
+        border: Border.all(color: const Color.fromARGB(197, 237, 237, 237), width: 2),
         borderRadius: const BorderRadius.all(Radius.circular(4)),
       ),
       child: Padding(
@@ -162,7 +162,7 @@ class InputPersonalizedPopUp extends StatelessWidget {
                   obscureText: obscureText,
                   autovalidateMode: autovalidateMode,
                   controller: controller,
-                  style: const TextStyle(fontFamily: 'Nunito', color: Colors.black, fontSize: 15),
+                  style: const TextStyle(fontFamily: 'inter', color: Colors.black, fontSize: 15),
                   inputFormatters: inputFormatters,
                   onEditingComplete: onEditingComplete,
                   decoration: InputDecoration(
@@ -173,7 +173,7 @@ class InputPersonalizedPopUp extends StatelessWidget {
                     disabledBorder: InputBorder.none,
                     hintText: hintText,
                     labelText: labelText,
-                    labelStyle: const TextStyle(fontFamily: 'Nunito', color: Color.fromARGB(255, 194, 194, 194), fontSize: 15),
+                    labelStyle: const TextStyle(fontFamily: 'inter', color: Color.fromARGB(255, 194, 194, 194), fontSize: 15),
                   ),
                   validator: validator,
                   onChanged: onChanged,

@@ -12,13 +12,13 @@ class Requests extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Align(alignment: Alignment.centerLeft ,child: Manrope(text: "Pedidos", size: 16, font: FontWeight.w600)),
+        const Align(alignment: Alignment.centerLeft ,child: Manrope(text: "Períodos", size: 18, font: FontWeight.w600)),
         const SizedBox(height: 10),
         Container(
-          height: 500,
+          height: 450,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 237, 239, 248),
+            color: const Color(0xffF5F6FA),
             borderRadius: BorderRadius.circular(20)
           ),
           child:  SingleChildScrollView(
@@ -60,19 +60,25 @@ class Body extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Container(
-        height: 60,
+        height: 50,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(20)
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(
+            color: const Color.fromARGB(255, 223, 223, 223),
+            width: 1.0,
+            style: BorderStyle.solid,
+            strokeAlign: BorderSide.strokeAlignInside,
+          )
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
-                width: MediaQuery.of(context).size.width - 230,
+                width: MediaQuery.of(context).size.width - 245,
                 child: Manrope(text: name,aling:TextAlign.left  , size: 16, font: FontWeight.w600, maxLines: 1)),
               Manrope(text: date,aling:TextAlign.center  , size: 12, font: FontWeight.w400, maxLines: 1)
             ],
